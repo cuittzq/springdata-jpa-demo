@@ -5,6 +5,9 @@ import cn.tzq.repository.DeptRepository;
 import cn.tzq.service.DeptService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.redis.core.ListOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -74,5 +77,11 @@ public class DeptServiceImpl implements DeptService {
     @Override
     public List<Dept> findByNameLike(String name) {
         return repository.findByNameLike("%" + name + "%");
+    }
+
+    @Override
+    public List<Dept> findAll(PageRequest request) {
+        Page<Dept> deptpageinfo =  repository.findAll(request);
+        return  deptpageinfo.getContent();
     }
 }

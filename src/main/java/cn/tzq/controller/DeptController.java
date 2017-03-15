@@ -5,8 +5,11 @@ import cn.tzq.service.DeptService;
 import cn.tzq.service.impl.DeptServiceImpl;
 import cn.tzq.utils.RedisTemplateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * Created by zhiqiang on 2017/3/14.
@@ -52,5 +55,20 @@ public class DeptController {
         }
 
         return redisdept;
+    }
+
+    @RequestMapping(value = "/user/page",
+            method = RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_VALUE + ";charset=UTF-8")
+    public List<Dept> FindAll(Integer pageNumber,Integer pageSize) {
+        PageRequest request = this.buildPageRequest(pageNumber, pageSize);
+        List<Dept> deptPageList = this.deptService.findAll(request);
+
+        return deptPageList;
+    }
+
+    //构建PageRequest
+    private PageRequest buildPageRequest(Integer pageNumber, Integer pagzSize) {
+        return new PageRequest(pageNumber - 1, pagzSize, null);
     }
 }

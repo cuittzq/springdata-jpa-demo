@@ -48,8 +48,11 @@ public class RedisTemplateUtils {
      */
     @SuppressWarnings("unchecked")
     public <T> T get(String key, Class<T> clazz) throws IllegalAccessException, InstantiationException {
-        Object varobj= redisTemplate.boundValueOps(key).get();
-        return  Gson.class.newInstance().fromJson(varobj.toString(),clazz);
+        Object varobj = redisTemplate.boundValueOps(key).get();
+        if (varobj == null || varobj.toString().isEmpty()) {
+            return null;
+        }
+        return Gson.class.newInstance().fromJson(varobj.toString(), clazz);
     }
 
     /**

@@ -1,0 +1,33 @@
+# Server settings (ServerProperties)
+server:
+  port: 8080
+  address: 127.0.0.1
+  sessionTimeout: 30
+  contextPath: /
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/demo?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&useSSL=false
+    username: postgres
+    password: 123456
+    driver-class: org.postgresql.Driver
+  jpa:
+      show-sql: true
+      generate-ddl: true
+      properties:
+  #      dialect: org.hibernate.dialect.MySQL5Dialect
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  #      dialect: org.hibernate.dialect.Oracle10gDialect
+      hibernate:
+        ddl-auto: update
+        naming:
+          strategy: org.hibernate.cfg.ImprovedNamingStrategy
+  redis:
+      host: 127.0.0.1
+      port: 6379
+      password: 123456
+      pool:
+        max-idle: 100
+        min-idle: 1
+        max-active: 1000
+        max-wait: -1
+
