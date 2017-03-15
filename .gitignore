@@ -39,3 +39,6 @@ buildNumber.properties
 
 
 .idea/libraries/Maven_*.xml
+.idea/workspace.xml
+springdatatest.iml
+.idea/artifacts/springdatatest_war_exploded.xml
