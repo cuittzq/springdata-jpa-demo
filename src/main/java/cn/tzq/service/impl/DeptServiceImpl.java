@@ -5,12 +5,19 @@ import cn.tzq.repository.DeptRepository;
 import cn.tzq.service.DeptService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.ListOperations;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
+import org.springframework.data.redis.serializer.RedisSerializer;
+import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -21,6 +28,7 @@ import java.util.List;
 public class DeptServiceImpl implements DeptService {
 
     private final DeptRepository repository;
+
 
     @Autowired
     public DeptServiceImpl(DeptRepository repository) {

@@ -1,3 +1,5 @@
+import org.springframework.data.redis.core.ListOperations;
+
 import javax.transaction.Transactional;
 
 /**
