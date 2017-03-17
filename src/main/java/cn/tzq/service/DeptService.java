@@ -62,8 +62,15 @@ public interface DeptService {
     /**
      * 分页获取部门信息
      *
-     * @param request 分页信息
+     * @param var1 分页信息
+     * @return 部门信息
+     */
+    List<Dept> findbyPage(Pageable var1);
+
+    /**
+     * 获取所有部门信息
+     *
      * @return 所有的部门信息
      */
-    List<Dept> findAll(PageRequest request);
+    List<Dept> findAll();
 }

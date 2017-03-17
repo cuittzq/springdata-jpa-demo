@@ -9,13 +9,15 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
  * Created by zhiqiang on 2017/3/14.
  */
 @RestController
-@RequestMapping(value = "/frame")
+@RequestMapping(value = "/Dept")
 public class DeptController {
 
     private DeptService deptService;
@@ -28,7 +30,7 @@ public class DeptController {
         this.redisTemplateUtils = redisTemplateUtils;
     }
 
-    @RequestMapping(value = "/saveUser",
+    @RequestMapping(value = "/saveDept",
 //            method：  指定请求的method类型， GET、POST、PUT、DELETE等；
             method = RequestMethod.POST,
 //           produces 指定返回的内容类型，仅当request请求头中的(Accept)类型中包含该指定类型才返回
@@ -38,7 +40,7 @@ public class DeptController {
         return issaved ? "保存成功" : "保存失敗";
     }
 
-    @RequestMapping(value = "/user/{id}",
+    @RequestMapping(value = "/getdeptInfo/{id}",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE + ";charset=UTF-8")
     public Dept FindOne(@PathVariable Integer id) {
@@ -57,14 +59,42 @@ public class DeptController {
         return redisdept;
     }
 
-    @RequestMapping(value = "/user/page",
+    /*
+    *
+    * */
+    @RequestMapping(value = "/getdeptInfo/page",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE + ";charset=UTF-8")
-    public List<Dept> FindAll(Integer pageNumber,Integer pageSize) {
+    public List<Dept> FindAll(Integer pageNumber, Integer pageSize) {
         PageRequest request = this.buildPageRequest(pageNumber, pageSize);
-        List<Dept> deptPageList = this.deptService.findAll(request);
+        List<Dept> deptPageList = this.deptService.findbyPage(request);
 
         return deptPageList;
+    }
+
+    @RequestMapping(value = "/getdeptInfo/maxdept",
+            method = RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_VALUE + ";charset=UTF-8")
+    public List<Dept> FindMaxDept(Integer pageNumber, Integer pageSize) {
+        PageRequest request = this.buildPageRequest(pageNumber, pageSize);
+        List<Dept> deptPageList = this.deptService.findbyPage(request);
+        List<Integer> prices = new ArrayList<>();
+        final int max = prices.stream().reduce(0, Math::max);
+
+        // deptPageList.stream().findAny().
+        return deptPageList;
+    }
+
+    /**
+     * 获取全部的部门信息
+     *
+     * @return 部门信息
+     */
+    @RequestMapping(value = "/getdeptInfo/all",
+            method = RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_VALUE + ";charset=UTF-8")
+    public List<Dept> getDpetAll() {
+        return this.deptService.findAll();
     }
 
     //构建PageRequest

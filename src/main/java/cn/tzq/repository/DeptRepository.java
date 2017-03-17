@@ -18,12 +18,4 @@ public interface DeptRepository extends JpaRepository<Dept,Integer> {
      * @return 符合条件的部门的信息
      */
     List<Dept> findByNameLike(String name);
-
-    /**
-     * 分页获取部门信息
-     *
-     * @param var1 分页信息
-     * @return 所有的部门信息
-     */
-    Page<Dept> findAll(Pageable var1);
 }

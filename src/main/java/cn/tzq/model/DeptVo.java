@@ -1,5 +1,6 @@
 package cn.tzq.model;
 
+import javax.persistence.Column;
 import java.io.Serializable;
 
 /**
@@ -18,11 +19,17 @@ public class DeptVo implements Serializable {
     String name;
 
     /**
+     * 部门描述
+     */
+    String describe;
+
+    /**
      * 部门编号
      */
     public Integer getId() {
         return id;
     }
+
     /**
      * 部门编号
      */
@@ -42,5 +49,13 @@ public class DeptVo implements Serializable {
      */
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDescribe() {
+        return describe;
+    }
+
+    public void setDescribe(String describe) {
+        this.describe = describe;
     }
 }

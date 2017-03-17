@@ -26,25 +26,52 @@ public class Dept  implements Serializable {
     @Column(name = "dept_name", length = 10)
     String name;
 
-//    /**
-//     * 员工信息
-//     */
-//    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "dept")
-//    List<Employee> employees;
 
 
+    /**
+     * 部门描述
+     */
+    @Column(name = "dept_describe", length = 255)
+    String describe;
+
+    /**
+     * @return
+     */
+    public String getDescribe() {
+        return describe;
+    }
+
+    /**
+     * @param describe
+     */
+    public void setDescribe(String describe) {
+        this.describe = describe;
+    }
+
+    /**
+     * @return
+     */
     public Integer getId() {
         return id;
     }
 
+    /**
+     * @param id
+     */
     public void setId(Integer id) {
         this.id = id;
     }
 
+    /**
+     * @return
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * @param name
+     */
     public void setName(String name) {
         this.name = name;
     }
