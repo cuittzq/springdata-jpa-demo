@@ -31,19 +31,26 @@ public class DeptController {
     }
 
     @RequestMapping(value = "/saveDept",
-//            method：  指定请求的method类型， GET、POST、PUT、DELETE等；
             method = RequestMethod.POST,
-//           produces 指定返回的内容类型，仅当request请求头中的(Accept)类型中包含该指定类型才返回
             produces = MediaType.APPLICATION_JSON_VALUE + ";charset=UTF-8")
     public String saveUser(@RequestBody Dept dept) {
         boolean issaved = deptService.save(dept);
         return issaved ? "保存成功" : "保存失敗";
     }
 
+
+    @RequestMapping(value = "/deleteDept",
+            method = RequestMethod.POST,
+            produces = MediaType.APPLICATION_JSON_VALUE + ";charset=UTF-8")
+    public boolean deleteDept(@RequestBody Dept dept) {
+        deptService.delete(dept);
+        return true;
+    }
+
     @RequestMapping(value = "/getdeptInfo/{id}",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE + ";charset=UTF-8")
-    public Dept FindOne(@PathVariable Integer id) {
+    public Dept findOne(@PathVariable Integer id) {
         Dept redisdept = null;
         try {
             redisdept = redisTemplateUtils.get(String.format("Dept_%d", id), Dept.class);
@@ -60,12 +67,12 @@ public class DeptController {
     }
 
     /*
-    *
+    * 分页获取部门信息
     * */
     @RequestMapping(value = "/getdeptInfo/page",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE + ";charset=UTF-8")
-    public List<Dept> FindAll(Integer pageNumber, Integer pageSize) {
+    public List<Dept> findAll(Integer pageNumber, Integer pageSize) {
         PageRequest request = this.buildPageRequest(pageNumber, pageSize);
         List<Dept> deptPageList = this.deptService.findbyPage(request);
 
@@ -75,7 +82,7 @@ public class DeptController {
     @RequestMapping(value = "/getdeptInfo/maxdept",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE + ";charset=UTF-8")
-    public List<Dept> FindMaxDept(Integer pageNumber, Integer pageSize) {
+    public List<Dept> findMaxDept(Integer pageNumber, Integer pageSize) {
         PageRequest request = this.buildPageRequest(pageNumber, pageSize);
         List<Dept> deptPageList = this.deptService.findbyPage(request);
         List<Integer> prices = new ArrayList<>();
