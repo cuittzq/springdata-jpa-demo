@@ -4,11 +4,16 @@ import cn.tzq.model.Dept;
 import cn.tzq.service.DeptService;
 import cn.tzq.service.impl.DeptServiceImpl;
 import cn.tzq.utils.RedisTemplateUtils;
+import com.github.pagehelper.PageInfo;
+import com.querydsl.core.types.Order;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.OrderBy;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -72,10 +77,9 @@ public class DeptController {
     @RequestMapping(value = "/getdeptInfo/page",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE + ";charset=UTF-8")
-    public List<Dept> findAll(Integer pageNumber, Integer pageSize) {
+    public PageInfo<Dept> findAll(Integer pageNumber, Integer pageSize) {
         PageRequest request = this.buildPageRequest(pageNumber, pageSize);
-        List<Dept> deptPageList = this.deptService.findbyPage(request);
-
+        PageInfo<Dept> deptPageList = this.deptService.findbyPage(request);
         return deptPageList;
     }
 
@@ -84,12 +88,10 @@ public class DeptController {
             produces = MediaType.APPLICATION_JSON_VALUE + ";charset=UTF-8")
     public List<Dept> findMaxDept(Integer pageNumber, Integer pageSize) {
         PageRequest request = this.buildPageRequest(pageNumber, pageSize);
-        List<Dept> deptPageList = this.deptService.findbyPage(request);
+        PageInfo<Dept> deptPageList = this.deptService.findbyPage(request);
         List<Integer> prices = new ArrayList<>();
         final int max = prices.stream().reduce(0, Math::max);
-
-        // deptPageList.stream().findAny().
-        return deptPageList;
+        return deptPageList.getList();
     }
 
     /**
@@ -106,6 +108,6 @@ public class DeptController {
 
     //构建PageRequest
     private PageRequest buildPageRequest(Integer pageNumber, Integer pagzSize) {
-        return new PageRequest(pageNumber - 1, pagzSize, null);
+        return new PageRequest(pageNumber - 1, pagzSize, Sort.Direction.ASC, "id");
     }
 }

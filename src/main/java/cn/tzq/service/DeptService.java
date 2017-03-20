@@ -1,6 +1,7 @@
 package cn.tzq.service;
 
 import cn.tzq.model.Dept;
+import com.github.pagehelper.PageInfo;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -65,7 +66,7 @@ public interface DeptService {
      * @param var1 分页信息
      * @return 部门信息
      */
-    List<Dept> findbyPage(Pageable var1);
+    PageInfo<Dept> findbyPage(Pageable var1);
 
     /**
      * 获取所有部门信息
