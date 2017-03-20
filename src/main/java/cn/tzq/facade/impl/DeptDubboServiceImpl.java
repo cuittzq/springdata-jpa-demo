@@ -1,93 +1,96 @@
-package cn.tzq.controller;
+package cn.tzq.facade.impl;
 
+import cn.tzq.facade.DeptDubboService;
+import cn.tzq.model.VoMapper;
 import cn.tzq.model.Dept;
 import cn.tzq.model.DeptVo;
-import cn.tzq.model.VoMapper;
 import cn.tzq.service.DeptService;
 import cn.tzq.service.impl.DeptServiceImpl;
 import cn.tzq.utils.RedisTemplateUtils;
+import com.alibaba.dubbo.config.annotation.Service;
 import com.github.pagehelper.PageInfo;
-import com.querydsl.core.types.Order;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
-import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.OrderBy;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by zhiqiang on 2017/3/14.
+ * Created by zhiqiang on 2017/3/20.
  */
-@RestController
-@RequestMapping(value = "/Dept")
-public class DeptController {
+@Service(version = "1.0.0")
+public class DeptDubboServiceImpl implements DeptDubboService {
 
     private DeptService deptService;
 
     private RedisTemplateUtils redisTemplateUtils;
 
     @Autowired
-    public DeptController(DeptServiceImpl deptService, RedisTemplateUtils redisTemplateUtils) {
+    public DeptDubboServiceImpl(DeptServiceImpl deptService, RedisTemplateUtils redisTemplateUtils) {
         this.deptService = deptService;
         this.redisTemplateUtils = redisTemplateUtils;
     }
 
-    @RequestMapping(value = "/saveDept",
-            method = RequestMethod.POST,
-            produces = MediaType.APPLICATION_JSON_VALUE + ";charset=UTF-8")
-    public String saveDept(@RequestBody DeptVo dept) {
+    /**
+     * @param dept 部门信息
+     * @return
+     */
+    public String saveDept(DeptVo dept) {
         boolean issaved = deptService.save(VoMapper.Vo2Do(dept));
         return issaved ? "保存成功" : "保存失敗";
     }
 
 
-    @RequestMapping(value = "/deleteDept",
-            method = RequestMethod.POST,
-            produces = MediaType.APPLICATION_JSON_VALUE + ";charset=UTF-8")
-    public boolean deleteDept(@RequestBody DeptVo dept) {
+    /**
+     * @param dept 部门信息
+     * @return
+     */
+    public boolean deleteDept(DeptVo dept) {
         deptService.delete(VoMapper.Vo2Do(dept));
         return true;
     }
 
-    @RequestMapping(value = "/getdeptInfo/{id}",
-            method = RequestMethod.GET,
-            produces = MediaType.APPLICATION_JSON_VALUE + ";charset=UTF-8")
-    public DeptVo findOne(@PathVariable Integer id) {
-        DeptVo redisdept = null;
+
+    /**
+     * @param id 部门ID
+     * @return
+     */
+    public DeptVo getdeptInfo(Integer id) {
+        Dept redisdept = null;
         try {
-            redisdept = redisTemplateUtils.get(String.format("Dept_%d", id), DeptVo.class);
+            redisdept = redisTemplateUtils.get(String.format("Dept_%d", id), Dept.class);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
 
         if (redisdept == null) {
-            redisdept = VoMapper.Do2Vo(deptService.findOne(id));
+            redisdept = deptService.findOne(id);
             redisTemplateUtils.set(String.format("Dept_%d", redisdept.getId()), redisdept, 30L);
         }
 
-        return redisdept;
+        return VoMapper.Do2Vo(redisdept);
     }
 
-    /*
-    * 分页获取部门信息
-    * */
-    @RequestMapping(value = "/getdeptInfo/page",
-            method = RequestMethod.GET,
-            produces = MediaType.APPLICATION_JSON_VALUE + ";charset=UTF-8")
-    public PageInfo<DeptVo> findAll(Integer pageNumber, Integer pageSize) {
+    /**
+     * 分页获取部门信息
+     *
+     * @param pageNumber
+     * @param pageSize
+     * @return
+     */
+    public PageInfo<DeptVo> getdeptInfoByPage(Integer pageNumber, Integer pageSize) {
         PageRequest request = this.buildPageRequest(pageNumber, pageSize);
         PageInfo<DeptVo> deptPageList = this.deptService.findbyPage(request);
         return deptPageList;
     }
 
-    @RequestMapping(value = "/getdeptInfo/maxdept",
-            method = RequestMethod.GET,
-            produces = MediaType.APPLICATION_JSON_VALUE + ";charset=UTF-8")
+
+    /**
+     * @param pageNumber
+     * @param pageSize
+     * @return
+     */
     public List<DeptVo> findMaxDept(Integer pageNumber, Integer pageSize) {
         PageRequest request = this.buildPageRequest(pageNumber, pageSize);
         PageInfo<DeptVo> deptPageList = this.deptService.findbyPage(request);
@@ -101,12 +104,9 @@ public class DeptController {
      *
      * @return 部门信息
      */
-    @RequestMapping(value = "/getdeptInfo/all",
-            method = RequestMethod.GET,
-            produces = MediaType.APPLICATION_JSON_VALUE + ";charset=UTF-8")
     public List<DeptVo> getDpetAll() {
         List<Dept> depts = this.deptService.findAll();
-         return VoMapper.Do2VoList(depts);
+        return VoMapper.Do2VoList(depts);
     }
 
     //构建PageRequest

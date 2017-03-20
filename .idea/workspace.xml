@@ -6,7 +6,10 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/springdatatest.iml" afterPath="$PROJECT_DIR$/springdatatest.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/tzq/Application.java" afterPath="$PROJECT_DIR$/src/main/java/cn/tzq/Application.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/tzq/controller/DeptController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/tzq/controller/DeptController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/tzq/model/Dept.java" afterPath="$PROJECT_DIR$/src/main/java/cn/tzq/model/Dept.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/tzq/model/DeptVo.java" afterPath="$PROJECT_DIR$/src/main/java/cn/tzq/model/DeptVo.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/tzq/service/DeptService.java" afterPath="$PROJECT_DIR$/src/main/java/cn/tzq/service/DeptService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/tzq/service/impl/DeptServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/cn/tzq/service/impl/DeptServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" />
@@ -35,33 +38,27 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DeptController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DeptController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzq/controller/DeptController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="101" column="47" lean-forward="true" selection-start-line="101" selection-start-column="47" selection-end-line="101" selection-end-column="47" />
+            <state relative-caret-position="154">
+              <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1149#1302#0" expanded="false" />
+                <element signature="e#1478#1633#0" expanded="false" />
+                <element signature="e#1774#1934#0" expanded="false" />
+                <element signature="method#findMaxDept#0;class#DeptController#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReflectiveMethodInvocation.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/4.3.6.RELEASE/spring-aop-4.3.6.RELEASE-sources.jar!/org/springframework/aop/framework/ReflectiveMethodInvocation.java">
+      <file leaf-file-name="Dept.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzq/model/Dept.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="514">
-              <caret line="178" column="0" lean-forward="false" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DeptRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzq/repository/DeptRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="465">
+              <caret line="46" column="19" lean-forward="false" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -70,10 +67,106 @@
       <file leaf-file-name="DeptServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzq/service/impl/DeptServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="133" column="81" lean-forward="true" selection-start-line="133" selection-start-column="81" selection-end-line="133" selection-end-column="81" />
+            <state relative-caret-position="938">
+              <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
               <folding>
                 <element signature="method#update#0;class#DeptServiceImpl#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeptVo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzq/model/DeptVo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="486">
+              <caret line="38" column="5" lean-forward="false" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="232">
+              <caret line="71" column="45" lean-forward="false" selection-start-line="71" selection-start-column="45" selection-end-line="71" selection-end-column="45" />
+              <folding>
+                <element signature="n#dependency#3;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
+                <element signature="n#dependency#4;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
+                <element signature="n#dependency#5;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
+                <element signature="n#dependency#11;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
+                <element signature="n#dependency#12;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
+                <element signature="n#dependency#13;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
+                <element signature="n#dependency#14;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
+                <element signature="n#dependency#15;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
+                <element signature="n#dependency#18;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
+                <element signature="n#dependency#19;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
+                <element signature="n#dependency#20;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
+                <element signature="n#dependency#21;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
+                <element signature="n#plugin#1;n#plugins#0;n#build#0;n#project#0;n#!!top" expanded="false" />
+                <element signature="n#plugin#2;n#plugins#0;n#build#0;n#project#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spring-boot-starter-dubbo-1.0.0.pom" pinned="false" current-in-tab="false">
+        <entry file="file://$MAVEN_REPOSITORY$/io/dubbo/springboot/spring-boot-starter-dubbo/1.0.0/spring-boot-starter-dubbo-1.0.0.pom">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-146">
+              <caret line="10" column="30" lean-forward="false" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="40" column="17" lean-forward="true" selection-start-line="38" selection-start-column="4" selection-end-line="40" selection-end-column="17" />
+              <folding>
+                <element signature="e#37#116#0" expanded="false" />
+                <element signature="e#127#341#0" expanded="false" />
+                <element signature="e#344#699#0" expanded="false" />
+                <element signature="e#702#870#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeptDubboService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzq/facade/DeptDubboService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VoMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzq/model/VoMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeptDubboServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzq/facade/impl/DeptDubboServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="26" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -85,9 +178,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="spring-beans.schema" />
-        <option value="Class" />
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -99,6 +193,7 @@
       <find>slf4j</find>
       <find>spring-core</find>
       <find>go</find>
+      <find>192.168.4.229</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -121,7 +216,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/applicationContext.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/tzq/Application.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/tzq/Swagger2Config.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/tzq/utils/RedisTemplateUtils.java" />
         <option value="$PROJECT_DIR$/src/test/java/DeptServiceTest.java" />
@@ -129,14 +223,22 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/css/core.css" />
         <option value="$PROJECT_DIR$/src/main/resources/static/layouts/layout.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/index.html" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/tzq/repository/DeptRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/tzq/model/Dept.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/tzq/model/DeptVo.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/tzq/dubbo/DeptService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/tzq/dubbo/DeptDubboService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/tzq/Application.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/tzq/dubbo/impl/DeptDubboServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/tzq/repository/DeptRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/tzq/facade/VoMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/tzq/service/DeptService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/tzq/model/VoMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/tzq/service/impl/DeptServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/tzq/controller/DeptController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/tzq/model/Dept.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/tzq/model/DeptVo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/tzq/facade/impl/DeptDubboServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/tzq/facade/DeptDubboService.java" />
       </list>
     </option>
   </component>
@@ -238,6 +340,14 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -439,7 +549,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
+              <option name="myItemId" value="facade" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1230,12 +1340,12 @@
       <workItem from="1489645091106" duration="12650000" />
       <workItem from="1489715637455" duration="2692000" />
       <workItem from="1489719396777" duration="7187000" />
-      <workItem from="1489970780428" duration="8570000" />
+      <workItem from="1489970780428" duration="23522000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80585000" />
+    <option name="totallyTimeSpent" value="95537000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1273,7 +1383,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32849163" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14658849" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2153518" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1336,7 +1446,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/cn/tzq/controller/DeptController.java</url>
-          <line>41</line>
+          <line>43</line>
           <properties />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -1356,12 +1466,6 @@
           <line>52</line>
           <properties />
           <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/cn/tzq/controller/DeptController.java</url>
-          <line>80</line>
-          <properties />
-          <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/DeptServiceTest.java</url>
@@ -1399,32 +1503,14 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/cn/tzq/controller/DeptController.java</url>
-          <line>50</line>
+          <line>52</line>
           <properties />
           <option name="timeStamp" value="24" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/cn/tzq/service/impl/DeptServiceImpl.java</url>
-          <line>120</line>
-          <properties />
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/cn/tzq/service/impl/DeptServiceImpl.java</url>
-          <line>133</line>
-          <properties />
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/cn/tzq/service/impl/DeptServiceImpl.java</url>
-          <line>131</line>
-          <properties />
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/cn/tzq/controller/DeptController.java</url>
-          <line>40</line>
-          <properties class="cn.tzq.controller.DeptController" method="saveUser" />
+          <line>42</line>
+          <properties class="cn.tzq.controller.DeptController" method="saveDept" />
           <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
@@ -1456,35 +1542,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/1.13.0.RELEASE/spring-data-commons-1.13.0.RELEASE.jar!/org/springframework/data/repository/PagingAndSortingRepository.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="4" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/1.13.0.RELEASE/spring-data-commons-1.13.0.RELEASE.jar!/org/springframework/data/domain/Page.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/1.13.0.RELEASE/spring-data-commons-1.13.0.RELEASE.jar!/org/springframework/data/domain/Pageable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="25" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/1.13.0.RELEASE/spring-data-commons-1.13.0.RELEASE.jar!/org/springframework/data/domain/PageRequest.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.0.11.Final/hibernate-core-5.0.11.Final-sources.jar!/org/hibernate/cfg/AvailableSettings.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -1541,14 +1598,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6291">
           <caret line="316" column="10" lean-forward="false" selection-start-line="316" selection-start-column="10" selection-end-line="316" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzq/Swagger2Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="23" column="70" lean-forward="false" selection-start-line="23" selection-start-column="70" selection-end-line="23" selection-end-column="70" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1609,18 +1658,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/DeptServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="81" column="42" lean-forward="false" selection-start-line="81" selection-start-column="42" selection-end-line="81" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#TimeTest#0;class#DeptServiceTest#0" expanded="false" />
-            <element signature="e#1611#1617#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/js/index.html" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/fragments/footer.html" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/core.css" />
@@ -1628,43 +1665,10 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/fragments/alert.html" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/layouts/layout.html" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzq/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-jpa/1.11.0.RELEASE/spring-data-jpa-1.11.0.RELEASE.jar!/org/springframework/data/jpa/repository/JpaRepository.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="16" column="81" lean-forward="false" selection-start-line="16" selection-start-column="81" selection-end-line="16" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzq/model/DeptVo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="23" column="19" lean-forward="false" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="19" />
-          <folding>
-            <element signature="e#445#446#0" expanded="false" />
-            <element signature="e#470#471#0" expanded="false" />
-            <element signature="e#535#536#0" expanded="false" />
-            <element signature="e#563#564#0" expanded="false" />
-            <element signature="e#622#623#0" expanded="false" />
-            <element signature="e#649#650#0" expanded="false" />
-            <element signature="e#717#718#0" expanded="false" />
-            <element signature="e#749#750#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzq/model/Dept.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1685,46 +1689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="24" column="21" lean-forward="false" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="32" column="37" lean-forward="true" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
-          <folding>
-            <element signature="n#dependency#3;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#dependency#4;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#dependency#5;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#dependency#10;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#dependency#11;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#dependency#12;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#dependency#13;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#dependency#14;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#dependency#17;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#dependency#18;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#dependency#19;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#dependency#20;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#plugin#1;n#plugins#0;n#build#0;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#plugin#2;n#plugins#0;n#build#0;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#plugin#3;n#plugins#0;n#build#0;n#project#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzq/service/DeptService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="68" column="19" lean-forward="false" selection-start-line="68" selection-start-column="19" selection-end-line="68" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/1.13.0.RELEASE/spring-data-commons-1.13.0.RELEASE-sources.jar!/org/springframework/data/repository/PagingAndSortingRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="327">
@@ -1738,7 +1702,7 @@
         <state relative-caret-position="702">
           <caret line="26" column="36" lean-forward="false" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
           <folding>
-            <element signature="e#0#1550#0" expanded="true" />
+            <element signature="e#0#1550#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1780,8 +1744,8 @@
         <state relative-caret-position="189">
           <caret line="33" column="13" lean-forward="false" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
           <folding>
-            <element signature="e#1572#1573#0" expanded="true" />
-            <element signature="e#1606#1607#0" expanded="true" />
+            <element signature="e#1572#1573#0" expanded="false" />
+            <element signature="e#1606#1607#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1794,25 +1758,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/github/pagehelper/pagehelper/4.1.6/pagehelper-4.1.6.jar!/com/github/pagehelper/PageInfo.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="246" column="19" lean-forward="false" selection-start-line="246" selection-start-column="19" selection-end-line="246" selection-end-column="19" />
-          <folding>
-            <element signature="e#1094#1095#0" expanded="true" />
-            <element signature="e#1123#1124#0" expanded="true" />
-            <element signature="method#PageInfo#2;class#PageInfo#0" expanded="false" />
-            <element signature="method#calcNavigatepageNums#0;class#PageInfo#0" expanded="false" />
-            <element signature="method#calcPage#0;class#PageInfo#0" expanded="false" />
-            <element signature="method#judgePageBoudary#0;class#PageInfo#0" expanded="false" />
-            <element signature="e#6312#6313#0" expanded="true" />
-            <element signature="e#6351#6352#0" expanded="true" />
-            <element signature="e#6958#6959#0" expanded="true" />
-            <element signature="e#7004#7005#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/4.3.6.RELEASE/spring-aop-4.3.6.RELEASE-sources.jar!/org/springframework/aop/framework/ReflectiveMethodInvocation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="514">
@@ -1821,30 +1766,176 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/dubbo/2.5.3/dubbo-2.5.3.jar!/com/alibaba/dubbo/config/annotation/Service.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzq/Swagger2Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzq/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzq/repository/DeptRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="432">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/pagehelper/pagehelper/4.1.6/pagehelper-4.1.6.jar!/com/github/pagehelper/PageInfo.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="34" column="11" lean-forward="false" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
+          <folding>
+            <element signature="method#PageInfo#0;class#PageInfo#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzq/service/DeptService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="614">
+          <caret line="76" column="12" lean-forward="true" selection-start-line="76" selection-start-column="12" selection-end-line="76" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/DeptServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="60" column="29" lean-forward="true" selection-start-line="60" selection-start-column="29" selection-end-line="60" selection-end-column="29" />
+          <folding>
+            <element signature="method#TimeTest#0;class#DeptServiceTest#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzq/model/Dept.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="46" column="19" lean-forward="false" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzq/model/DeptVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="38" column="5" lean-forward="false" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzq/controller/DeptController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1149#1302#0" expanded="false" />
+            <element signature="e#1478#1633#0" expanded="false" />
+            <element signature="e#1774#1934#0" expanded="false" />
+            <element signature="method#findMaxDept#0;class#DeptController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzq/facade/impl/DeptDubboServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="26" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="71" column="45" lean-forward="false" selection-start-line="71" selection-start-column="45" selection-end-line="71" selection-end-column="45" />
+          <folding>
+            <element signature="n#dependency#3;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
+            <element signature="n#dependency#4;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
+            <element signature="n#dependency#5;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
+            <element signature="n#dependency#11;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
+            <element signature="n#dependency#12;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
+            <element signature="n#dependency#13;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
+            <element signature="n#dependency#14;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
+            <element signature="n#dependency#15;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
+            <element signature="n#dependency#18;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
+            <element signature="n#dependency#19;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
+            <element signature="n#dependency#20;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
+            <element signature="n#dependency#21;n#dependencies#0;n#project#0;n#!!top" expanded="false" />
+            <element signature="n#plugin#1;n#plugins#0;n#build#0;n#project#0;n#!!top" expanded="false" />
+            <element signature="n#plugin#2;n#plugins#0;n#build#0;n#project#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$MAVEN_REPOSITORY$/io/dubbo/springboot/spring-boot-starter-dubbo/1.0.0/spring-boot-starter-dubbo-1.0.0.pom">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-146">
+          <caret line="10" column="30" lean-forward="false" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzq/model/VoMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzq/facade/DeptDubboService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzq/service/impl/DeptServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="133" column="81" lean-forward="true" selection-start-line="133" selection-start-column="81" selection-end-line="133" selection-end-column="81" />
+        <state relative-caret-position="938">
+          <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
           <folding>
             <element signature="method#update#0;class#DeptServiceImpl#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/tzq/controller/DeptController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="101" column="47" lean-forward="true" selection-start-line="101" selection-start-column="47" selection-end-line="101" selection-end-column="47" />
+        <state relative-caret-position="266">
+          <caret line="40" column="17" lean-forward="true" selection-start-line="38" selection-start-column="4" selection-end-line="40" selection-end-column="17" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#37#116#0" expanded="false" />
+            <element signature="e#127#341#0" expanded="false" />
+            <element signature="e#344#699#0" expanded="false" />
+            <element signature="e#702#870#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -19,6 +19,7 @@
         <commons-io.version>2.5</commons-io.version>
         <gson.version>2.2.4</gson.version>
         <pagehelper.version>4.1.6</pagehelper.version>
+        <dubbo-spring-boot>1.0.0</dubbo-spring-boot>
     </properties>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -65,6 +66,13 @@
         </dependency>
 
         <!--Spring-boot-->
+        <!-- Spring Boot Dubbo 依赖 -->
+        <dependency>
+            <groupId>io.dubbo.springboot</groupId>
+            <artifactId>spring-boot-starter-dubbo</artifactId>
+            <version>${dubbo-spring-boot}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
