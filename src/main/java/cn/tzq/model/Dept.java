@@ -9,7 +9,7 @@ import java.util.List;
  */
 @Entity
 @Table(name = "m_dept")
-public class Dept  implements Serializable {
+public class Dept implements Serializable {
     private static final long serialVersionUID = -8459755922288527580L;
 
     /**
@@ -27,12 +27,25 @@ public class Dept  implements Serializable {
     String name;
 
 
-
     /**
      * 部门描述
      */
     @Column(name = "dept_describe", length = 255)
     String describe;
+
+    /**
+     * @param id
+     * @param name
+     * @param describe
+     */
+    public Dept(Integer id, String name, String describe) {
+        this.id = id;
+        this.name = name;
+        this.describe = describe;
+    }
+
+    public Dept() {
+    }
 
     /**
      * @return

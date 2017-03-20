@@ -1,11 +1,15 @@
 package cn.tzq.service.impl;
 
 import cn.tzq.model.Dept;
+import cn.tzq.model.DeptVo;
+import cn.tzq.model.VoMapper;
 import cn.tzq.repository.DeptRepository;
 import cn.tzq.service.DeptService;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.redis.core.ListOperations;
@@ -112,9 +116,21 @@ public class DeptServiceImpl implements DeptService {
      * @return 部门信息
      */
     @Override
-    public List<Dept> findbyPage(Pageable var1) {
+    public PageInfo<DeptVo> findbyPage(Pageable var1) {
         Page<Dept> deptpageinfo = repository.findAll(var1);
-        return deptpageinfo.getContent();
+
+        PageInfo<DeptVo> deptPageInfo = new PageInfo(VoMapper.Do2VoList(deptpageinfo.getContent()));
+        // 总数
+        deptPageInfo.setTotal(deptpageinfo.getTotalElements());
+        // 页大小
+        deptPageInfo.setPageSize(var1.getPageSize());
+        // 当前页
+        deptPageInfo.setPageNum(var1.getPageNumber() + 1);
+        // 总页数
+        deptPageInfo.setPages(deptpageinfo.getTotalPages());
+        deptPageInfo.setIsFirstPage(deptPageInfo.getPageNum() == 1);
+        deptPageInfo.setIsLastPage(deptPageInfo.getPageNum() >= deptPageInfo.getPages());
+        return deptPageInfo;
     }
 
     /**
