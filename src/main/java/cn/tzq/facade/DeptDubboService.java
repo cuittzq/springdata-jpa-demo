@@ -2,6 +2,7 @@ package cn.tzq.facade;
 
 import cn.tzq.model.DeptVo;
 import com.github.pagehelper.PageInfo;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -13,21 +14,21 @@ public interface DeptDubboService {
      * @param dept 部门信息
      * @return
      */
-    String saveDept(DeptVo dept);
+    Boolean saveDept(DeptVo dept);
 
 
     /**
      * @param dept 部门信息
      * @return
      */
-    boolean deleteDept(DeptVo dept);
+    void deleteDept(DeptVo dept);
 
 
     /**
      * @param id 部门ID
      * @return
      */
-    DeptVo getdeptInfo(Integer id);
+    DeptVo getDeptInfo(Integer id);
 
     /**
      * 分页获取部门信息
@@ -36,7 +37,7 @@ public interface DeptDubboService {
      * @param pageSize
      * @return
      */
-    PageInfo<DeptVo> getdeptInfoByPage(Integer pageNumber, Integer pageSize);
+    PageInfo<DeptVo> getDeptInfoByPage(Integer pageNumber, Integer pageSize);
 
     /**
      * @param pageNumber

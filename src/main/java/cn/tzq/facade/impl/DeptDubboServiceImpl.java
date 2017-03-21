@@ -1,19 +1,15 @@
 package cn.tzq.facade.impl;
 
 import cn.tzq.facade.DeptDubboService;
-import cn.tzq.model.VoMapper;
-import cn.tzq.model.Dept;
 import cn.tzq.model.DeptVo;
+import cn.tzq.model.VoMapper;
 import cn.tzq.service.DeptService;
 import cn.tzq.service.impl.DeptServiceImpl;
 import cn.tzq.utils.RedisTemplateUtils;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -32,44 +28,32 @@ public class DeptDubboServiceImpl implements DeptDubboService {
         this.redisTemplateUtils = redisTemplateUtils;
     }
 
-    /**
-     * @param dept 部门信息
-     * @return
-     */
-    public String saveDept(DeptVo dept) {
-        boolean issaved = deptService.save(VoMapper.Vo2Do(dept));
-        return issaved ? "保存成功" : "保存失敗";
-    }
-
 
     /**
      * @param dept 部门信息
      * @return
      */
-    public boolean deleteDept(DeptVo dept) {
-        deptService.delete(VoMapper.Vo2Do(dept));
-        return true;
+    @Override
+    public Boolean saveDept(DeptVo dept) {
+        return this.deptService.save(VoMapper.Vo2Do(dept));
     }
 
+    /**
+     * @param dept 部门信息
+     * @return
+     */
+    @Override
+    public void deleteDept(DeptVo dept) {
+        this.deptService.delete(VoMapper.Vo2Do(dept));
+    }
 
     /**
      * @param id 部门ID
      * @return
      */
-    public DeptVo getdeptInfo(Integer id) {
-        Dept redisdept = null;
-        try {
-            redisdept = redisTemplateUtils.get(String.format("Dept_%d", id), Dept.class);
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-
-        if (redisdept == null) {
-            redisdept = deptService.findOne(id);
-            redisTemplateUtils.set(String.format("Dept_%d", redisdept.getId()), redisdept, 30L);
-        }
-
-        return VoMapper.Do2Vo(redisdept);
+    @Override
+    public DeptVo getDeptInfo(Integer id) {
+        return VoMapper.Do2Vo(this.deptService.findOne(id));
     }
 
     /**
@@ -79,24 +63,19 @@ public class DeptDubboServiceImpl implements DeptDubboService {
      * @param pageSize
      * @return
      */
-    public PageInfo<DeptVo> getdeptInfoByPage(Integer pageNumber, Integer pageSize) {
-        PageRequest request = this.buildPageRequest(pageNumber, pageSize);
-        PageInfo<DeptVo> deptPageList = this.deptService.findbyPage(request);
-        return deptPageList;
+    @Override
+    public PageInfo<DeptVo> getDeptInfoByPage(Integer pageNumber, Integer pageSize) {
+        return this.deptService.findbyPage(pageNumber, pageSize);
     }
-
 
     /**
      * @param pageNumber
      * @param pageSize
      * @return
      */
+    @Override
     public List<DeptVo> findMaxDept(Integer pageNumber, Integer pageSize) {
-        PageRequest request = this.buildPageRequest(pageNumber, pageSize);
-        PageInfo<DeptVo> deptPageList = this.deptService.findbyPage(request);
-        List<Integer> prices = new ArrayList<>();
-        final int max = prices.stream().reduce(0, Math::max);
-        return deptPageList.getList();
+        return null;
     }
 
     /**
@@ -104,13 +83,8 @@ public class DeptDubboServiceImpl implements DeptDubboService {
      *
      * @return 部门信息
      */
+    @Override
     public List<DeptVo> getDpetAll() {
-        List<Dept> depts = this.deptService.findAll();
-        return VoMapper.Do2VoList(depts);
-    }
-
-    //构建PageRequest
-    private PageRequest buildPageRequest(Integer pageNumber, Integer pagzSize) {
-        return new PageRequest(pageNumber - 1, pagzSize, Sort.Direction.ASC, "id");
+        return null;
     }
 }

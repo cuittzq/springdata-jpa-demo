@@ -8,10 +8,7 @@ import cn.tzq.service.DeptService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.*;
 import org.springframework.data.redis.core.ListOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -112,11 +109,13 @@ public class DeptServiceImpl implements DeptService {
     /**
      * 分页获取部门信息
      *
-     * @param var1 分页信息
      * @return 部门信息
      */
     @Override
-    public PageInfo<DeptVo> findbyPage(Pageable var1) {
+    public PageInfo<DeptVo> findbyPage(Integer pageNumber, Integer pagzSize) {
+
+        Pageable var1 = buildPageRequest(pageNumber, pagzSize);
+
         Page<Dept> deptpageinfo = repository.findAll(var1);
 
         PageInfo<DeptVo> deptPageInfo = new PageInfo(VoMapper.Do2VoList(deptpageinfo.getContent()));
@@ -141,5 +140,17 @@ public class DeptServiceImpl implements DeptService {
     @Override
     public List<Dept> findAll() {
         return repository.findAll();
+    }
+
+
+    /**
+     * 构建PageRequest
+     *
+     * @param pageNumber
+     * @param pagzSize
+     * @return
+     */
+    private PageRequest buildPageRequest(Integer pageNumber, Integer pagzSize) {
+        return new PageRequest(pageNumber - 1, pagzSize, Sort.Direction.ASC, "id");
     }
 }

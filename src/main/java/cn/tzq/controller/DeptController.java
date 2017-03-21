@@ -7,17 +7,12 @@ import cn.tzq.service.DeptService;
 import cn.tzq.service.impl.DeptServiceImpl;
 import cn.tzq.utils.RedisTemplateUtils;
 import com.github.pagehelper.PageInfo;
-import com.querydsl.core.types.Order;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.OrderBy;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -73,15 +68,19 @@ public class DeptController {
         return redisdept;
     }
 
-    /*
-    * 分页获取部门信息
-    * */
+
+    /**
+     * 获取部门信息
+     *
+     * @param pageNumber
+     * @param pageSize
+     * @return
+     */
     @RequestMapping(value = "/getdeptInfo/page",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE + ";charset=UTF-8")
     public PageInfo<DeptVo> findAll(Integer pageNumber, Integer pageSize) {
-        PageRequest request = this.buildPageRequest(pageNumber, pageSize);
-        PageInfo<DeptVo> deptPageList = this.deptService.findbyPage(request);
+        PageInfo<DeptVo> deptPageList = this.deptService.findbyPage(pageNumber, pageSize);
         return deptPageList;
     }
 
@@ -89,8 +88,7 @@ public class DeptController {
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE + ";charset=UTF-8")
     public List<DeptVo> findMaxDept(Integer pageNumber, Integer pageSize) {
-        PageRequest request = this.buildPageRequest(pageNumber, pageSize);
-        PageInfo<DeptVo> deptPageList = this.deptService.findbyPage(request);
+        PageInfo<DeptVo> deptPageList = this.deptService.findbyPage(pageNumber, pageSize);
         List<Integer> prices = new ArrayList<>();
         final int max = prices.stream().reduce(0, Math::max);
         return deptPageList.getList();
@@ -106,11 +104,6 @@ public class DeptController {
             produces = MediaType.APPLICATION_JSON_VALUE + ";charset=UTF-8")
     public List<DeptVo> getDpetAll() {
         List<Dept> depts = this.deptService.findAll();
-         return VoMapper.Do2VoList(depts);
-    }
-
-    //构建PageRequest
-    private PageRequest buildPageRequest(Integer pageNumber, Integer pagzSize) {
-        return new PageRequest(pageNumber - 1, pagzSize, Sort.Direction.ASC, "id");
+        return VoMapper.Do2VoList(depts);
     }
 }

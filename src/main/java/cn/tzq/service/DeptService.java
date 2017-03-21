@@ -64,10 +64,11 @@ public interface DeptService {
     /**
      * 分页获取部门信息
      *
-     * @param var1 分页信息
+     * @param pageNumber
+     * @param pageSize
      * @return 部门信息
      */
-    PageInfo<DeptVo> findbyPage(Pageable var1);
+    PageInfo<DeptVo> findbyPage(Integer pageNumber, Integer pageSize);
 
     /**
      * 获取所有部门信息
